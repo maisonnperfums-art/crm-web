@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Maison N - Pack Prestige</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fafbfc;
+            color: #1a4329;
+            padding-bottom: 90px;
+            overflow-x: hidden;
+        }
+
+        /* Header & Logo - Full Width Fix */
+        .header-container {
+            width: 100%;
+            background-color: #ffffff;
+            text-align: center;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .logo-full-width {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .sub-title {
+            font-size: 10pt;
+            letter-spacing: 2px;
+            color: #b39258;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 12px 0;
+            text-align: center;
+        }
+
+        .main-title {
+            font-size: 17pt;
+            font-weight: 800;
+            color: #1a4329;
+            margin: 20px 0 10px 0;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .price-container {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .current-price {
+            font-size: 32pt;
+            font-weight: 900;
+            color: #000000;
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        .old-price {
+            font-size: 15pt;
+            color: #a0a0a0;
+            text-decoration: line-through;
+            display: inline-block;
+        }
+
+        .highlight-text {
+            background-color: #fff275;
+            padding: 10px 15px;
+            font-size: 13.5pt;
+            font-weight: bold;
+            text-align: center;
+            margin: 15px 15px;
+            display: block;
+            color: #000000;
+            border-radius: 4px;
+        }
+
+        /* Features List */
+        .features-list {
+            margin: 20px 15px;
+            list-style: none;
+        }
+
+        .feature-item {
+            display: table;
+            width: 100%;
+            margin-bottom: 15px;
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .feature-number {
+            display: table-cell;
+            width: 32px;
+            height: 32px;
+            background-color: #1a4329;
+            color: #ffffff;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: bold;
+            font-size: 12pt;
+            border-radius: 4px;
+        }
+
+        .feature-text {
+            display: table-cell;
+            vertical-align: middle;
+            padding-right: 15px;
+            font-size: 11.5pt;
+            font-weight: bold;
+            color: #1a4329;
+            line-height: 1.4;
+            text-align: right;
+        }
+
+        .product-image-container {
+            width: 100%;
+            margin: 20px 0;
+            padding: 0 15px;
+            position: relative;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            background-color: #1a4329;
+            color: #ffffff;
+            padding: 6px 14px;
+            font-size: 9.5pt;
+            font-weight: bold;
+            border-radius: 4px;
+            z-index: 2;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        /* Section How To Order */
+        .section-how-to {
+            font-size: 13.5pt;
+            font-weight: bold;
+            color: #000000;
+            margin: 25px 15px 5px 15px;
+            background-color: #fff275;
+            padding: 6px 14px;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        /* Catalogue Highlight Section */
+        .catalogue-title-container {
+            margin: 35px 15px 15px 15px;
+            padding: 12px;
+            background: linear-gradient(135deg, #eaf2ed 0%, #d5e4db 100%);
+            border-right: 5px solid #1a4329;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .catalogue-title {
+            font-size: 14pt;
+            font-weight: 800;
+            color: #1a4329;
+            letter-spacing: 1px;
+        }
+
+        .tabs-container {
+            display: table;
+            width: calc(100% - 30px);
+            margin: 0 auto 20px auto;
+            border-collapse: separate;
+            border-spacing: 6px 0;
+        }
+
+        .tab-item {
+            display: table-cell;
+            background-color: #ffffff;
+            color: #1a4329;
+            text-align: center;
+            padding: 12px 5px;
+            font-size: 10pt;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .tab-item.active {
+            background-color: #1a4329;
+            color: #ffffff;
+            border-color: #1a4329;
+        }
+
+        /* Premium Form Redesign */
+        .form-container {
+            margin: 30px 15px;
+            padding: 25px 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid #edf2f7;
+        }
+
+        .form-main-header {
+            font-size: 15pt;
+            font-weight: bold;
+            color: #1a4329;
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .form-main-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #1a4329;
+            border-radius: 2px;
+        }
+
+        .form-section-title {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #1a4329;
+            margin: 20px 0 12px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px dashed #cbd5e1;
+            text-align: right;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 700;
+            font-size: 10pt;
+            color: #334155;
+            text-align: right;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 14px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 11pt;
+            text-align: right;
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-weight: 600;
+            transition: all 0.25s ease;
+            -webkit-appearance: none;
+        }
+
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: #1a4329;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(26, 67, 41, 0.12);
+        }
+
+        .form-group input::placeholder, .form-group textarea::placeholder {
+            color: #94a3b8;
+            font-size: 10pt;
+            font-weight: normal;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 85px;
+        }
+
+        .big-green-btn {
+            background-color: #1a4329;
+            color: #ffffff;
+            border: none;
+            width: 100%;
+            padding: 16px;
+            font-size: 14pt;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(26, 67, 41, 0.2);
+            transition: all 0.2s ease;
+            margin-top: 15px;
+        }
+
+        .big-green-btn:active {
+            transform: scale(0.98);
+            background-color: #12301d;
+        }
+
+        .copyright-text {
+            text-align: center;
+            font-size: 9.5pt;
+            color: #64748b;
+            line-height: 1.6;
+            margin: 40px 15px 20px 15px;
+        }
+
+        /* Sticky Bottom Bar */
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            padding: 12px 20px;
+            display: table;
+            z-index: 999;
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.04);
+        }
+
+        .footer-price-side {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: right;
+        }
+
+        .footer-product-name {
+            font-size: 9pt;
+            color: #64748b;
+            font-weight: bold;
+        }
+
+        .footer-price {
+            font-size: 16pt;
+            font-weight: 900;
+            color: #000000;
+        }
+
+        .footer-button-side {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: left;
+            width: 45%;
+        }
+
+        .order-button {
+            background-color: #1a4329;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 11pt;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Overlay Validation Screen */
+        .success-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            z-index: 10000;
+            text-align: center;
+            padding-top: 150px;
+        }
+
+        .success-message {
+            color: #1a4329;
+            font-size: 16pt;
+            font-weight: bold;
+            margin: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo top bar on full width -->
+    <div class="header-container">
+        <img src="5b06b5eb-b662-4855-82d3-8d135c82aecd.jpeg" class="logo-full-width" alt="Maison N">
+        <div class="sub-title">L'ÉLITE DE LA PARFUMERIE</div>
+    </div>
+
+    <div class="main-title">PACK PRESTIGE EXCLUSIF</div>
+
+    <div class="price-container">
+        <span class="current-price">200 MAD</span>
+        <span class="old-price">400 MAD</span>
+    </div>
+
+    <div class="highlight-text">عطور تطابق الأصلي بنسبة 90%</div>
+
+    <!-- Features Section -->
+    <ul class="features-list">
+        <li class="feature-item">
+            <div class="feature-number">1</div>
+            <div class="feature-text">زيوت عطرية مستوردة من فرنسا</div>
+        </li>
+        <li class="feature-item">
+            <div class="feature-number">2</div>
+            <div class="feature-text">تطابق تام مع معايير السلامة العالمية IFRA</div>
+        </li>
+        <li class="feature-item">
+            <div class="feature-number">3</div>
+            <div class="feature-text">ثبات 3 أيام وأكثر فالملابس</div>
+        </li>
+        <li class="feature-item">
+            <div class="feature-number">4</div>
+            <div class="feature-text">فوحان قوي وهالة عطرية تتجاوز 6 ساعات</div>
+        </li>
+    </ul>
+
+    <!-- Product Showcase Image -->
+    <div class="product-image-container">
+        <span class="badge">الأكثر مبيعاً 🔥</span>
+        <img src="8122D6EC-4F55-492F-A8DD-51AD8E4D8301.png" alt="Coffret Pack Prestige">
+    </div>
+
+    <!-- Instructions Section -->
+    <div>
+        <span class="section-how-to">كيفاش تطلب الـ Pack ديالك ؟</span>
+    </div>
+
+    <ul class="features-list">
+        <li class="feature-item">
+            <div class="feature-number">1</div>
+            <div class="feature-text">شوف الكتالوج لتحت واختار النوتات لي كتعجبك.</div>
+        </li>
+        <li class="feature-item">
+            <div class="feature-number">2</div>
+            <div class="feature-text">اكتب أسماء العطور الـ 5 ف الخانات المخصصة.</div>
+        </li>
+        <li class="feature-item">
+            <div class="feature-number">3</div>
+            <div class="feature-text">عمر معلوماتك وضغط تأكيد، التوصيل فابور تال عندك!</div>
+        </li>
+    </ul>
+
+    <!-- Highlighted Catalogue Bar -->
+    <div class="catalogue-title-container">
+        <div class="catalogue-title">CATALOGUE MAISON N</div>
+    </div>
+
+    <!-- Tabs Menu -->
+    <div class="tabs-container">
+        <div class="tab-item active">POUR ELLE</div>
+        <div class="tab-item">POUR LUI</div>
+        <div class="tab-item">COLLECTION NICHE</div>
+    </div>
+
+    <!-- Catalog Image Wrapper -->
+    <div class="product-image-container">
+        <img src="8122D6EC-4F55-492F-A8DD-51AD8E4D8301.png" alt="Catalogue List">
+    </div>
+
+    <!-- Premium Re-designed Form -->
+    <div class="form-container">
+        <div class="form-main-header">إستمارة الطلب (المرجو ملء الخانات)</div>
+        
+        <form id="orderForm" action="https://script.google.com/macros/s/AKfycbyiWTrrq2VpRZXU-LexrkVIXuiyKrxXDRMfzInstFkqO2WYPUEn1nFodQE4UiLX3myQ9g/exec" method="POST">
+            
+            <div class="form-section-title">1. اختيار العطور الخمسة</div>
+            
+            <div class="form-group">
+                <label>LES 3 PREMIERS PARFUMS *</label>
+                <input type="text" name="les_3_premiers_parfums" required placeholder="العطر الأول، الثاني، والثالث">
+            </div>
+            
+            <div class="form-group">
+                <label>LES 2 DERNIERS PARFUMS *</label>
+                <input type="text" name="les_2_derniers_parfums" required placeholder="العطر الرابع والخامس">
+            </div>
+
+            <div class="form-section-title">2. معلومات الشحن والتوصيل</div>
+            
+            <div class="form-group">
+                <label>NOM COMPLET *</label>
+                <input type="text" name="name" required placeholder="الاسم الكامل">
+            </div>
+            
+            <div class="form-group">
+                <label>TÉLÉPHONE *</label>
+                <input type="tel" name="phone" required placeholder="رقم الهاتف">
+            </div>
+            
+            <div class="form-group">
+                <label>CONFIRMER LE TÉLÉPHONE *</label>
+                <input type="tel" name="confirm_phone" required placeholder="تأكيد رقم الهاتف">
+            </div>
+            
+            <div class="form-group">
+                <label>VILLE *</label>
+                <input type="text" name="city" required placeholder="المدينة">
+            </div>
+            
+            <div class="form-group">
+                <label>ADRESSE COMPLÈTE *</label>
+                <textarea name="address" required placeholder="العنوان الكامل (الحي، الشارع، رقم المنزل...)"></textarea>
+            </div>
+
+            <button type="button" class="big-green-btn" id="mainSubmitBtn">اضغط هنا لتأكيد الطلب</button>
+        </form>
+    </div>
+
+    <!-- Footer Corporate Notice -->
+    <div class="copyright-text">
+        Maison N © 2026. Tous droits réservés.<br>
+        LIVRAISON GRATUITE & PAIEMENT À LA LIVRAISON.
+    </div>
+
+    <!-- Fixed Floating Bottom Bar -->
+    <div class="sticky-footer">
+        <div class="footer-price-side">
+            <div class="footer-product-name">PACK 5 PARFUMS</div>
+            <div class="footer-price">200 MAD</div>
+        </div>
+        <div class="footer-button-side">
+            <button type="button" class="order-button" id="stickySubmitBtn">COMMANDEZ</button>
+        </div>
+    </div>
+
+    <!-- Success Feedback Overlay -->
+    <div class="success-overlay" id="successScreen">
+        <div class="success-message">
+            ✨ <br>
+            Merci ! Votre commande a été enregistrée avec succès. <br>
+            سنتصل بكم قريباً لتأكيد طلبكم. شكراً لثقتكم!
+        </div>
+    </div>
+
+    <script>
+        function submitOrder() {
+            var form = document.getElementById('orderForm');
+            if(form.checkValidity()) {
+                
+                document.getElementById('mainSubmitBtn').innerText = "... جاري الإرسال";
+                document.getElementById('mainSubmitBtn').disabled = true;
+                document.getElementById('stickySubmitBtn').innerText = "...";
+                document.getElementById('stickySubmitBtn').disabled = true;
+
+                var formData = new FormData(form);
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors'
+                })
+                .then(function() {
+                    document.getElementById('successScreen').style.display = 'block';
+                    window.scrollTo(0,0);
+                })
+                .catch(function(error) {
+                    alert("Erreur lors de l'envoi, veuillez réessayer.");
+                    document.getElementById('mainSubmitBtn').innerText = "اضغط هنا لتأكيد الطلب";
+                    document.getElementById('mainSubmitBtn').disabled = false;
+                    document.getElementById('stickySubmitBtn').innerText = "COMMANDEZ";
+                    document.getElementById('stickySubmitBtn').disabled = false;
+                });
+            } else {
+                form.reportValidity();
+            }
+        }
+
+        document.getElementById('mainSubmitBtn').addEventListener('click', submitOrder);
+        document.getElementById('stickySubmitBtn').addEventListener('click', function() {
+            document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
