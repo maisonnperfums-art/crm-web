@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شكراً لطلبكم - Maison des Parfums</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .thankyou-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        .icon {
+            font-size: 50px;
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+        h1 {
+            color: #1a4d3e;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .order-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+            text-align: right;
+        }
+        .order-table th, .order-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+        .order-table th {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .total-row {
+            font-weight: bold;
+            color: #1a4d3e;
+            background-color: #f0fdf4;
+        }
+        .btn-home {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    fbq('init', 'VOTRE_PIXEL_ID'); 
+    fbq('track', 'PageView');
+    fbq('track', 'Purchase', { value: 200, currency: 'MAD' });
+    </script>
+</head>
+<body>
+
+    <div class="thankyou-card">
+        <div class="icon">✓</div>
+        <h1>شكراً لك! تم تأكيد طلبك بنجاح</h1>
+        <p>لقد استلمنا طلبك وسيقوم فريقنا بالتواصل معك عبر الهاتف لتأكيد التفاصيل قبل الشحن.</p>
+
+        <!-- جدول ملخص الطلب -->
+        <table class="order-table">
+            <thead>
+                <tr>
+                    <th>البيان</th>
+                    <th>التفاصيل</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>نوع العرض:</strong></td>
+                    <td id="pack-type">Pack 8 Parfums (30ml)</td>
+                </tr>
+                <tr>
+                    <td><strong>العطور المختارة:</strong></td>
+                    <td id="selected-items">جارٍ التحميل...</td>
+                </tr>
+                <tr>
+                    <td><strong>التوصيل:</strong></td>
+                    <td>مجاني (Gratuit)</td>
+                </tr>
+                <tr class="total-row">
+                    <td><strong>المجموع الكلي:</strong></td>
+                    <td>200 DH (الدفع عند الاستلام)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="index.html" class="btn-home">العودة للرئيسية</a>
+    </div>
+
+    <script>
+        // قراءة البيانات المحفوظة من index.html وعرضها في الجدول
+        const packType = localStorage.getItem('selectedPack') || 'Pack 8 Parfums';
+        const items = localStorage.getItem('selectedParfums') || 'Pack Homme / Femme';
+
+        document.getElementById('pack-type').innerText = packType;
+        document.getElementById('selected-items').innerText = items;
+    </script>
+</body>
+</html>
